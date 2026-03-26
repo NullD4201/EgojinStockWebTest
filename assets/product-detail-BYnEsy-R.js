@@ -1,4 +1,4 @@
-import{e as m,r as d,g as u,u as n,h as b}from"./index-CbPJfJnL.js";async function g(){const r=new URLSearchParams(window.location.search),o=parseInt(r.get("id"));let e;try{e=await m(o)}catch{document.getElementById("product-detail-container").innerHTML=`
+import{e as m,r as d,g as u,u as n,h as b}from"./index-Pn9Rsdm9.js";async function g(){const r=new URLSearchParams(window.location.search),o=parseInt(r.get("id"));let e;try{e=await m(o)}catch{document.getElementById("product-detail-container").innerHTML=`
       <div class="card">
         <h1>상품을 찾을 수 없습니다</h1>
         <button class="btn btn-primary" id="back-to-products">상품목록</button>

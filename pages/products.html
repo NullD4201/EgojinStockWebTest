@@ -1,0 +1,76 @@
+<div class="card">
+    <div class="card-header flex justify-between items-center">
+        <div>
+            <h1 class="card-title">상품 목록</h1>
+        </div>
+        <div id="product-register-btn-container"></div>
+    </div>
+
+    <div class="filters" style="margin-bottom: var(--spacing-sm);">
+        <button class="filter-btn" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="selling">판매중</button>
+        <button class="filter-btn" data-filter="limited">소진시 단종</button>
+        <button class="filter-btn" data-filter="nostock">단종</button>
+    </div>
+    <div class="dropdown" id="supplier-dropdown" style="margin-bottom: var(--spacing-sm);">
+        <button class="form-select" style="width: 100%; text-align: left;" id="supplier-dropdown-btn">
+            <span class="dropdown-label">공급처</span>
+        </button>
+        <div class="dropdown-menu" id="supplier-dropdown-menu"></div>
+    </div>
+    <div class="dropdown" id="region-dropdown" style="margin-bottom: var(--spacing-sm);">
+        <button class="form-select" style="width: 100%; text-align: left;" id="region-dropdown-btn">
+            <span class="dropdown-label">공장 지역</span>
+        </button>
+        <div class="dropdown-menu region-dropdown-menu" id="region-dropdown-menu"></div>
+    </div>
+    <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md); align-items: stretch;">
+        <div class="search-bar" style="flex: 1; margin-bottom: 0;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="product-search" class="search-input" placeholder="상품명 또는 모델명으로 검색...">
+        </div>
+        <button class="filter-btn-icon" id="open-filter-btn">
+            <span>☰</span>
+        </button>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+        <select class="form-select" id="product-sort" style="width: auto; font-size: var(--font-size-sm); padding: var(--spacing-xs) var(--spacing-sm);">
+            <option value="name">이름순</option>
+            <option value="adminCode">어드민코드순</option>
+            <option value="voucherDate">입고예정일순</option>
+        </select>
+        <select class="form-select" id="product-page-size" style="width: auto; font-size: var(--font-size-sm); padding: var(--spacing-xs) var(--spacing-sm);">
+            <option value="50">50개씩</option>
+            <option value="100">100개씩</option>
+            <option value="150">150개씩</option>
+            <option value="200">200개씩</option>
+        </select>
+    </div>
+
+    <div id="products-list"></div>
+    <div id="products-pagination"></div>
+</div>
+
+<!-- Filter Drawer -->
+<div class="filter-drawer-overlay" id="filter-overlay"></div>
+<div class="filter-drawer" id="filter-drawer">
+    <div class="filter-drawer-header">
+        <h2>필터</h2>
+        <button class="btn btn-secondary btn-sm" id="close-filter-btn">✕</button>
+    </div>
+    <div class="filter-drawer-body">
+        <div class="filter-section">
+            <div class="filter-section-title">카테고리</div>
+            <div id="filter-categories"></div>
+        </div>
+        <div class="filter-section">
+            <div class="filter-section-title">부속</div>
+            <div id="filter-parts"></div>
+        </div>
+    </div>
+    <div class="filter-drawer-footer">
+        <button class="btn btn-secondary" id="filter-reset-btn">초기화</button>
+        <button class="btn btn-primary" id="filter-apply-btn">적용</button>
+    </div>
+</div>

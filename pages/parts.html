@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header flex justify-between items-center">
+        <h1 class="card-title">부속 목록</h1>
+        <div id="part-register-btn-container"></div>
+    </div>
+
+    <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="part-search" class="search-input" placeholder="부속명 또는 어드민코드로 검색...">
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm);">
+        <select class="form-select" id="part-sort" style="width: auto; font-size: var(--font-size-sm); padding: var(--spacing-xs) var(--spacing-sm);">
+            <option value="name">이름순</option>
+            <option value="adminCode">어드민코드순</option>
+            <option value="stock">재고순</option>
+        </select>
+        <select class="form-select" id="part-page-size" style="width: auto; font-size: var(--font-size-sm); padding: var(--spacing-xs) var(--spacing-sm);">
+            <option value="50">50개씩</option>
+            <option value="100">100개씩</option>
+            <option value="150">150개씩</option>
+            <option value="200">200개씩</option>
+        </select>
+    </div>
+
+    <div id="parts-list"></div>
+    <div id="parts-pagination"></div>
+</div>

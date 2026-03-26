@@ -1,0 +1,48 @@
+<div class="card" style="max-width: 800px; margin: 0 auto;">
+    <div class="card-header">
+        <h1 class="card-title">부속 등록</h1>
+        <p class="card-subtitle">새로운 부속을 등록합니다</p>
+    </div>
+
+    <form id="part-register-form">
+        <div class="form-group">
+            <label class="form-label">부속명 *</label>
+            <input type="text" id="part-name" class="form-input" placeholder="부속명을 입력하세요" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">설명</label>
+            <textarea id="part-description" class="form-textarea" placeholder="부속 설명을 입력하세요"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">어드민코드 *</label>
+            <input type="text" id="part-admin-code" class="form-input" placeholder="PART-XXX" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">사용 상품</label>
+            <div id="products-container" class="parts-checklist" style="max-height: 200px; overflow-y: auto;"></div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">보관 위치</label>
+            <div id="locations-container"></div>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm" id="add-location-btn">+ 위치 추가</button>
+                <button type="button" class="btn btn-secondary btn-sm" id="new-location-toggle">+ 새 위치 등록</button>
+            </div>
+            <div id="new-location-area" class="flex gap-sm" style="display: none; margin-top: var(--spacing-sm);">
+                <input type="text" id="new-location-code" class="form-input" placeholder="코드 (예: B-03)" style="flex: 1;">
+                <input type="text" id="new-location-name" class="form-input" placeholder="위치명" style="flex: 1;">
+                <button type="button" class="btn btn-primary btn-sm" id="save-location-btn">등록</button>
+                <button type="button" class="btn btn-secondary btn-sm" id="cancel-location-btn">취소</button>
+            </div>
+        </div>
+
+        <div class="flex gap-md">
+            <button type="submit" class="btn btn-primary">등록하기</button>
+            <button type="button" class="btn btn-secondary" id="part-register-cancel">취소</button>
+        </div>
+    </form>
+</div>

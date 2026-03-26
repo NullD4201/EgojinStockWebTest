@@ -1,4 +1,4 @@
-import{o as p,p as v,u as s,r as l,q as y,h as g}from"./index-CbPJfJnL.js";import{g as f}from"./qr-generator-CkRw2xrd.js";let a=null;async function q(){const r=new URLSearchParams(window.location.search),i=parseInt(r.get("id"));try{a=await p(i)}catch{document.getElementById("part-detail-container").innerHTML=`
+import{o as p,p as v,u as s,r as l,q as y,h as g}from"./index-Pn9Rsdm9.js";import{g as f}from"./qr-generator-CkRw2xrd.js";let a=null;async function q(){const r=new URLSearchParams(window.location.search),i=parseInt(r.get("id"));try{a=await p(i)}catch{document.getElementById("part-detail-container").innerHTML=`
       <div class="card">
         <h1>부속을 찾을 수 없습니다</h1>
         <button class="btn btn-primary" onclick="window.location.href='/parts'">돌아가기</button>

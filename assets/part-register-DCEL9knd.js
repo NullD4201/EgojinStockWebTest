@@ -1,4 +1,4 @@
-import{s as f,f as h,u as c,t as I,w,r as d}from"./index-CbPJfJnL.js";let l=[];async function L(){const m=document.getElementById("part-register-form"),u=document.getElementById("add-location-btn"),p=document.getElementById("locations-container"),y=document.getElementById("products-container");let r=[];try{[l,r]=await Promise.all([f(),h()])}catch{c.showToast("데이터를 불러올 수 없습니다.","error")}y.innerHTML=r.map(e=>`
+import{s as f,f as h,u as c,t as I,w,r as d}from"./index-Pn9Rsdm9.js";let l=[];async function L(){const m=document.getElementById("part-register-form"),u=document.getElementById("add-location-btn"),p=document.getElementById("locations-container"),y=document.getElementById("products-container");let r=[];try{[l,r]=await Promise.all([f(),h()])}catch{c.showToast("데이터를 불러올 수 없습니다.","error")}y.innerHTML=r.map(e=>`
         <label class="part-check-item" style="cursor: pointer;">
             <input type="checkbox" class="product-check" value="${e.id}">
             <span>${e.name}</span>

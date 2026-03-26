@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h1 class="card-title">QR 스캔</h1>
+    </div>
+
+    <div id="scanner-container" style="max-width: 600px; margin: 0 auto;">
+        <div id="qr-reader"
+            style="border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--spacing-lg);"></div>
+
+        <div id="scan-result" class="hidden"></div>
+
+        <div id="scanner-prompt" class="text-center" style="padding: var(--spacing-xl) 0;">
+            <p style="font-size: 48px; margin-bottom: var(--spacing-md);">📷</p>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--spacing-lg);">카메라를 사용하여 QR코드를 스캔합니다</p>
+            <button class="btn btn-primary" id="start-camera-btn" style="font-size: var(--font-size-lg); padding: var(--spacing-sm) var(--spacing-xl);">카메라 시작</button>
+        </div>
+
+        <div class="text-center" style="margin-top: var(--spacing-lg);">
+            <button class="btn btn-secondary" id="test-scan-btn">테스트 스캔</button>
+        </div>
+    </div>
+</div>

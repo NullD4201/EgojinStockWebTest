@@ -1,0 +1,72 @@
+<div class="card">
+    <div class="card-header flex justify-between items-center">
+        <div>
+            <h1 class="card-title">부속 신청</h1>
+        </div>
+        <button class="btn btn-primary" id="create-request-btn">+ 신청</button>
+    </div>
+
+    <div class="flex gap-sm mb-md" id="status-filter" style="flex-wrap: wrap;">
+        <button class="btn btn-sm btn-primary" data-status="">전체</button>
+        <button class="btn btn-sm btn-secondary" data-status="pending">대기</button>
+        <button class="btn btn-sm btn-secondary" data-status="approved">승인</button>
+        <button class="btn btn-sm btn-secondary" data-status="completed">완료</button>
+        <button class="btn btn-sm btn-secondary" data-status="rejected">반려</button>
+    </div>
+
+    <div id="requests-list"></div>
+    <div id="pagination-container"></div>
+</div>
+
+<!-- Create Request Modal -->
+<div id="request-modal" class="modal-overlay hidden">
+    <div class="card" style="max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto;">
+        <div class="card-header">
+            <h2 class="card-title">부속 신청</h2>
+        </div>
+
+        <form id="request-form">
+            <div class="form-group">
+                <label class="form-label">구분</label>
+                <div class="voucher-type-toggle" id="request-type-toggle">
+                    <button type="button" class="toggle-btn active" data-value="product">상품별</button>
+                    <button type="button" class="toggle-btn" data-value="part">부속별</button>
+                </div>
+                <input type="hidden" id="request-type" value="product">
+            </div>
+
+            <!-- 상품 모드: 상품 검색 → 아코디언 부속 목록 -->
+            <div id="product-mode-section">
+                <div class="form-group">
+                    <label class="form-label">상품 검색</label>
+                    <input type="text" class="form-input" id="product-search-input" placeholder="상품명 또는 모델번호로 검색">
+                    <div id="product-search-results" style="max-height: 200px; overflow-y: auto; margin-top: var(--spacing-xs);"></div>
+                </div>
+                <div id="product-accordion-list"></div>
+            </div>
+
+            <!-- 부속 모드: 관리코드로 추가 -->
+            <div id="part-mode-section" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label">부속 추가</label>
+                    <div class="flex gap-sm">
+                        <input type="text" class="form-input" id="part-code-input" placeholder="관리코드 입력" style="flex: 1;">
+                        <button type="button" class="btn btn-secondary" id="add-part-by-code-btn">추가</button>
+                    </div>
+                    <div id="part-code-message" style="margin-top: var(--spacing-xs); font-size: var(--font-size-sm);"></div>
+                </div>
+                <div id="manual-parts-list" class="parts-checklist"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">메모</label>
+                <textarea class="form-input" id="request-memo" rows="2" placeholder="신청 사유 (선택)"></textarea>
+            </div>
+
+            <div class="flex gap-md">
+                <button type="submit" class="btn btn-primary">신청</button>
+                <button type="button" class="btn btn-secondary" id="cancel-request-btn">취소</button>
+            </div>
+        </form>
+    </div>
+</div>

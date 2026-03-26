@@ -1,0 +1,82 @@
+<div class="card" style="max-width: 800px; margin: 0 auto;">
+    <div class="card-header">
+        <h1 class="card-title">상품 등록</h1>
+        <p class="card-subtitle">새로운 상품을 등록합니다</p>
+    </div>
+
+    <form id="product-register-form">
+        <div class="form-group">
+            <label class="form-label">상품 이미지</label>
+            <div class="image-dropzone" id="image-dropzone">
+                <input type="file" id="product-image-file" accept="image/*" style="display: none;">
+                <div id="image-preview-area"></div>
+                <div id="image-placeholder" class="image-dropzone-placeholder">
+                    <span class="image-dropzone-icon">+</span>
+                    <span>이곳에 이미지를 놓거나 선택하여 이미지 첨부</span>
+                </div>
+            </div>
+            <input type="text" id="product-image-url" class="form-input" placeholder="이미지 URL을 붙여넣기" style="margin-top: var(--spacing-sm);">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">상품명 *</label>
+            <input type="text" id="product-name" class="form-input" placeholder="상품명을 입력하세요" required>
+        </div>
+
+        <div class="grid grid-2">
+            <div class="form-group">
+                <label class="form-label">모델명 *</label>
+                <input type="text" id="product-model" class="form-input" placeholder="모델명을 입력하세요" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">카테고리 *</label>
+                <div class="flex gap-sm">
+                    <select id="product-category" class="form-select" required style="flex: 1;">
+                        <option value="">선택하세요</option>
+                    </select>
+                    <button type="button" class="btn btn-secondary" id="add-category-btn" title="카테고리 추가">+</button>
+                </div>
+                <div id="new-category-area" class="flex gap-sm" style="display: none; margin-top: var(--spacing-sm);">
+                    <input type="text" id="new-category-name" class="form-input" placeholder="새 카테고리명" style="flex: 1;">
+                    <button type="button" class="btn btn-primary" id="save-category-btn">추가</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-category-btn">취소</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">어드민코드 *</label>
+            <input type="text" id="product-admin-code" class="form-input" placeholder="PROD-XXX" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">판매 상태 *</label>
+            <select id="product-status" class="form-select" required>
+                <option value="selling">판매중</option>
+                <option value="limited">소진시 단종</option>
+                <option value="nostock">단종</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">공급처</label>
+            <input type="text" id="product-supplier" class="form-input" placeholder="공급처를 입력하세요">
+        </div>
+        <div class="grid grid-2">
+            <div class="form-group">
+                <label class="form-label">공장 국가</label>
+                <input type="text" id="product-factory-country" class="form-input" placeholder="예: 중국">
+            </div>
+            <div class="form-group">
+                <label class="form-label">공장 지역</label>
+                <input type="text" id="product-factory-city" class="form-input" placeholder="예: 선전">
+            </div>
+        </div>
+
+        <div class="flex gap-md">
+            <button type="submit" class="btn btn-primary">등록하기</button>
+            <button type="button" class="btn btn-secondary" id="product-register-cancel">취소</button>
+        </div>
+    </form>
+</div>
